@@ -1,33 +1,47 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(255, 255, 255, 0.92);
+  background-color: #1a1a1a;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --text-color: rgba(255, 255, 255, 0.92);
+  --text-color-light: rgba(255, 255, 255, 0.7);
+  --bg-color: #1a1a1a;
+  --card-bg: #2a2a2a;
+  --border-color: rgba(255, 255, 255, 0.12);
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --transition: all 0.3s ease;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--primary-color);
   text-decoration: inherit;
+  transition: var(--transition);
 }
 a:hover {
-  color: #535bf2;
+  color: var(--primary-hover);
+  text-decoration: underline;
 }
 
 body {
   margin: 0;
   display: flex;
-  /*place-items: center;*/
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 h1 {
@@ -42,38 +56,71 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--primary-color);
+  color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
 }
 button:hover {
-  border-color: #646cff;
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 3px solid rgba(79, 70, 229, 0.4);
+  outline-offset: 2px;
 }
 
 .card {
   padding: 2em;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 #app {
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
+    --text-color: #213547;
+    --text-color-light: #4b5563;
+    --bg-color: #ffffff;
+    --card-bg: #f9fafb;
+    --border-color: rgba(0, 0, 0, 0.1);
   }
   a:hover {
-    color: #747bff;
+    color: var(--primary-hover);
   }
   button {
-    background-color: #f9f9f9;
+    background-color: var(--primary-color);
+    color: white;
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  #app {
+    padding: 0;
+  }
+
+  .card {
+    padding: 1.5em;
   }
 }
