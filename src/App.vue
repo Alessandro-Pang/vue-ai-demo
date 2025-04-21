@@ -2,7 +2,7 @@
  * @Author: zi.yang
  * @Date: 2024-12-10 09:15:22
  * @LastEditors: zi.yang
- * @LastEditTime: 2025-04-21 15:12:48
+ * @LastEditTime: 2025-04-21 15:41:36
  * @Description:
  * @FilePath: /vue-app/src/App.vue
 -->
@@ -10,12 +10,16 @@
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+
+function handleLogoClick() {
+  window.open('')
+}
 </script>
 
 <template>
   <div class="app-container">
     <header class="app-header">
-      <div class="logo">Vue App</div>
+      <div class="logo" @click="">Vue AI Demo</div>
       <nav class="nav-menu">
         <ul>
           <li><router-link to="/">Transformers</router-link></li>
@@ -28,7 +32,7 @@ const router = useRouter();
       <router-view />
     </main>
     <footer class="app-footer">
-      <p>© 2025 Vue App - All rights reserved</p>
+      <p>© 2025 Vue AI Demo - All rights reserved</p>
     </footer>
   </div>
 </template>
