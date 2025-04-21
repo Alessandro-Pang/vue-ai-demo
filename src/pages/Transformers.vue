@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import {ref} from 'vue'
+import { ref } from 'vue';
+
 import { pipeline } from '@huggingface/transformers';
 
-const img = ref('');
+import placeholder from '../assets/placeholder.svg';
+
+const img = ref(placeholder);
 const textarea = ref('');
 
 async function handleUpload(evt: any) {
@@ -16,7 +19,7 @@ async function handleUpload(evt: any) {
   const pipe = await pipeline('image-to-text', 'Mozilla/distilvit');
   // 执行推理
   const output = await pipe(blobUrl);
-  textarea.value = output.map(x => x.generated_text).join('\n');
+  textarea.value = output.map((x: any) => x.generated_text || '').join('\n');
 }
 </script>
 

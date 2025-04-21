@@ -2,15 +2,11 @@
  * @Author: zi.yang
  * @Date: 2024-12-10 09:15:22
  * @LastEditors: zi.yang
- * @LastEditTime: 2025-04-21 15:41:36
+ * @LastEditTime: 2025-04-21 16:24:36
  * @Description:
  * @FilePath: /vue-app/src/App.vue
 -->
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-
-const router = useRouter();
-
 function handleLogoClick() {
   window.open('https://github.com/Alessandro-Pang/vue-ai-demo')
 }
@@ -19,7 +15,7 @@ function handleLogoClick() {
 <template>
   <div class="app-container">
     <header class="app-header">
-      <div class="logo" @click="">Vue AI Demo</div>
+      <div class="logo" @click="handleLogoClick">Vue AI Demo</div>
       <nav class="nav-menu">
         <ul>
           <li><router-link to="/">Transformers</router-link></li>
@@ -63,6 +59,7 @@ function handleLogoClick() {
   font-weight: 700;
   color: var(--primary-color);
   letter-spacing: -0.5px;
+  cursor: pointer;
 }
 
 .nav-menu {
