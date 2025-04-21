@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@huggingface/transformers": "^3.3.1",
+    "@tensorflow-models/body-pix": "^2.2.1",
+    "@tensorflow/tfjs-backend-cpu": "^4.22.0",
     "jimp": "^1.6.0",
+    "js-bullets": "^1.2.0",
     "tesseract.js": "^5.1.1",
     "vue": "^3.5.13",
     "vue-router": "4"
