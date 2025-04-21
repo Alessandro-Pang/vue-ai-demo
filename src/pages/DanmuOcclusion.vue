@@ -2,7 +2,7 @@
  * @Author: zi.yang
  * @Date: 2025-04-18 17:06:20
  * @LastEditors: zi.yang
- * @LastEditTime: 2025-04-21 16:58:01
+ * @LastEditTime: 2025-04-21 17:06:44
  * @Description:
  * @FilePath: /vue-app/src/pages/DanmuOcclusion.vue
 -->
@@ -198,8 +198,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <h1>美女弹幕</h1>
-  <p>这是一个美女图片弹幕示例，使用了bodyPix进行图像分割和遮罩绘制。</p>
+  <h1 style="margin-top: 0">弹幕防遮挡</h1>
+  <p>这是一个图片弹幕防遮挡示例，使用了bodyPix进行图像分割和遮罩绘制。</p>
   <p>图片每隔10秒自动刷新，弹幕随机显示。</p>
   <div id="container">
     <img src="https://v2.xxapi.cn/api/meinvpic?return=302" alt="" id="img" width="500px" />
