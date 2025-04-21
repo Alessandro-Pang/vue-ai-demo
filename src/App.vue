@@ -12,7 +12,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 function handleLogoClick() {
-  window.open('')
+  window.open('https://github.com/Alessandro-Pang/vue-ai-demo')
 }
 </script>
 
