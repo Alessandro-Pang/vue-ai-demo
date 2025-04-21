@@ -2,7 +2,7 @@
  * @Author: zi.yang
  * @Date: 2025-04-18 17:06:20
  * @LastEditors: zi.yang
- * @LastEditTime: 2025-04-21 15:51:16
+ * @LastEditTime: 2025-04-21 16:58:01
  * @Description:
  * @FilePath: /vue-app/src/pages/DanmuOcclusion.vue
 -->
@@ -164,6 +164,8 @@ const loadNewImage = async (): Promise<void> => {
   } catch (error) {
     console.error('加载新图片失败:', error)
   }
+
+  refreshTimer = window.setTimeout(loadNewImage, 10000)
 }
 
 // 初始化
@@ -172,12 +174,7 @@ const init = async (): Promise<void> => {
     // 加载模型
     segmenter = await loadBodyPixModel()
     console.log('模型加载完成')
-    
-    // 加载第一张图片
     await loadNewImage()
-    
-    // 设置定时刷新
-    refreshTimer = window.setInterval(loadNewImage, 10000)
   } catch (error) {
     console.error('初始化失败:', error)
   }

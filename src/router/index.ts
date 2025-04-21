@@ -2,11 +2,11 @@
  * @Author: zi.yang
  * @Date: 2025-04-21 15:15:05
  * @LastEditors: zi.yang
- * @LastEditTime: 2025-04-21 15:15:07
+ * @LastEditTime: 2025-04-21 16:59:44
  * @Description: 
  * @FilePath: /vue-app/src/router/index.ts
  */
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 
 // 自动导入pages目录下的所有页面组件
 const pages = import.meta.glob('../pages/*.vue')
@@ -27,7 +27,7 @@ const routes: RouteRecordRaw[] = Object.keys(pages).map(path => {
 
 // 创建路由实例
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes
 })
 
